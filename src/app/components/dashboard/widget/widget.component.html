@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">
+      <ng-content select="[tittle-widget]"></ng-content>
+    </h4>
+    <div class="card-text">
+      <div class="row">
+        <div class="col-12">
+          <ng-content select="[content-widget]"></ng-content>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <i class="pi pi-info-circle mr-1"></i>
+    <ng-content select="[footer-widget]"></ng-content>
+  </div>
+</div>
