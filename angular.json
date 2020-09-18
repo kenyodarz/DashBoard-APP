@@ -37,14 +37,18 @@
       "architect": {
         "build": {
           "allowedCommonJsDependencies": [
-              "primeng/primeng",
-              "primeicons",
-              "chart.js",
-              "lodash",
-              "jquery",
-              "bootstrap.js",
-              "popper.js"
-            ],
+            "primeng/primeng",
+            "primeicons",
+            "chart.js",
+            "lodash",
+            "jquery",
+            "bootstrap.js",
+            "popper.js",
+            "angularfire2",
+            "firebase/app",
+            "@firebase/database",
+            "moment|"
+          ],
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/DashBoard-APP",
@@ -67,7 +71,8 @@
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/chart.js/dist/Chart.js"
             ]
           },
           "configurations": {

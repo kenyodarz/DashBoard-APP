@@ -1,0 +1,18 @@
+<app-widget>
+  <span title-widget>Ultimos Comentarios</span>
+  <div content-widget>
+    <div class="row" *ngIf="listComments.length === 0">
+      <div class="col-12">No hay Comentarios</div>
+    </div>
+    <div class="row"*ngIf="listComments.length > 0">
+      <div class="col-12">
+        <div *ngFor="let comment of listComments">
+            <p>{{comment.user + ' ('+(comment.date | date:'dd/MM/yy') + ')' }}</p>
+            <p>{{comment.text}}</p>
+            <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span footer-widget>Ultimos Comentarios</span>
+</app-widget>
