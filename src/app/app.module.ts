@@ -13,6 +13,7 @@ import { PrimengModule } from './primeng.module';
 import { AppRoutingModule } from './app-routing.module';
 // Services
 import { ConfigService } from './services/config.service';
+import { MessageService } from 'primeng/api';
 // Components
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -64,7 +65,7 @@ const firebaseConfig = {
     ReactiveFormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
   ],
   providers: [
     ConfigService,
@@ -74,6 +75,7 @@ const firebaseConfig = {
       deps: [ConfigService],
       multi: true,
     },
+    MessageService,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
