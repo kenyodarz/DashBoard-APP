@@ -18,14 +18,17 @@ import { MessageService } from 'primeng/api';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CategoriesComponent } from './components/dashboard/categories/categories.component';
+import { AddCategoriesComponent } from './components/dashboard/categories/add-categories/add-categories.component';
 import { PostComponent } from './components/dashboard/post/post.component';
+import { AddPostComponent } from './components/dashboard/post/add-post/add-post.component';
 import { ResumeComponent } from './components/dashboard/resume/resume.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { WidgetComponent } from './components/dashboard/widget/widget.component';
 import { WidgetStadisticComponent } from './components/dashboard/widget/widget-stadistic/widget-stadistic.component';
 import { WidgetLastCommentsComponent } from './components/dashboard/widget/widget-last-comments/widget-last-comments.component';
 import { WidgetLastVisitsComponent } from './components/dashboard/widget/widget-last-visits/widget-last-visits.component';
-import { AddCategoriesComponent } from './components/dashboard/categories/add-categories/add-categories.component';
+import { HighlightDirective } from './directives/highlight.directive';
+import { WidgetCategoryComponent } from './components/dashboard/widget/widget-category/widget-category.component';
 
 export function configFactory(provider: ConfigService) {
   return () => provider.getData();
@@ -55,6 +58,9 @@ const firebaseConfig = {
     WidgetLastCommentsComponent,
     WidgetLastVisitsComponent,
     AddCategoriesComponent,
+    HighlightDirective,
+    AddPostComponent,
+    WidgetCategoryComponent,
   ],
   imports: [
     BrowserModule,

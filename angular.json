@@ -49,7 +49,8 @@
               "angularfire2",
               "firebase/app",
               "@firebase/database",
-              "moment"
+              "moment",
+              "quill.js"
             ],
             "outputPath": "dist/DashBoard-APP",
             "index": "src/index.html",
@@ -64,12 +65,15 @@
               "node_modules/font-awesome/css/font-awesome.css",
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/themes/saga-blue/theme.css",
-              "node_modules/primeng/resources/primeng.min.css"
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/quill/dist/quill.core.css",
+              "node_modules/quill/dist/quill.snow.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "node_modules/chart.js/dist/Chart.js"
+              "node_modules/chart.js/dist/Chart.js",
+              "node_modules/quill/dist/quill.js"
             ]
           },
           "configurations": {

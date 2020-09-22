@@ -1,1 +1,87 @@
-<p>post works!</p>
+<div class="row" id="posts">
+  <div class="col-12">
+    <div class="row no-gutters">
+      <div class="col-12 border-bottom pl-0 pb-2">
+        <span class="title-section mr-4">Posts</span>
+        <button
+          class="btn btn-primary btn-sm"
+          [routerLink]="['/posts/add']"
+        >
+          Agregar Post
+        </button>
+      </div>
+    </div>
+    <div class="row no-gutters mt-4">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-12">
+            <span>Buscar</span>
+          </div>  
+        </div>
+        <div class="row">
+          <div class="col-12 input-group">
+            <input
+              class="form-control"
+              type="text"
+              id="search"
+              #search
+              (keydown.enter)="updateword(search.value)"
+              [placeholder]="'Escribe al menos tres caractres'"
+            />
+            <span class="input-group-btn">
+              <button
+                class="btn btn-primary rounded-0"
+                (click)="updateword(search.value)"
+              >Buscar</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="row no-gutters mt-4">
+      <div class="col-12">
+        <p-table [columns]="cols" [value]="posts" [responsive]="true">
+          <ng-template pTemplate="header" let-columns>
+            <tr>
+              <th *ngFor="let col of columns">
+                {{ col.header }}
+              </th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-category>
+            <tr>
+              <td>
+                <span class="p-column-title">Categoria Seleccionada </span>
+                <p-checkbox
+                  name="posts"
+                  [value]="category.id"
+                  [(ngModel)]="selectedposts"
+                ></p-checkbox>
+              </td>
+              <td>
+                <span class="p-column-title">Nombre Categoria </span>
+                <span highlight [search]="searchWord">
+                  {{ category.name }}
+                </span>
+              </td>
+              <td>
+                <span class="p-column-title">Descripcion Categoria </span>
+                <span highlight [search]="searchWord">
+                  {{ category.description }}
+                </span>
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+    <div class="row no-gutters mt-4" *ngIf="selectedposts.length >= 1">
+      <div class="col-12">
+        <button class="btn btn-primary" (click)="deleteposts()">
+          Eliminar
+          {{ selectedposts.length >= 2 ? "Categorias" : "Categoria" }}
+        </button>
+      </div>
+    </div> -->
+  </div>
+</div>

@@ -11,7 +11,8 @@ import { Category } from 'src/app/models/category';
 })
 export class CategoriesComponent implements OnInit {
   categories: Category[];
-  selectedCategories;
+  selectedCategories: string[] = [];
+  searchWord: string;
 
   cols: any[];
 
@@ -20,8 +21,18 @@ export class CategoriesComponent implements OnInit {
   getCategories() {
     this.categoryService.getCategories().subscribe((listCategories) => {
       this.categories = listCategories;
-      console.log(this.categories);
+      // console.log(this.categories);
     });
+  }
+
+  deleteCategories() {
+    // console.log(this.selectedCategories);
+    this.categoryService.deleteCategories(this.selectedCategories);
+    this.selectedCategories = [];
+  }
+
+  updateword(value) {
+    this.searchWord = value;
   }
 
   ngOnInit(): void {

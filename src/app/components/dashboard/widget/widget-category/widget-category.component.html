@@ -1,0 +1,17 @@
+<app-widget>
+  <span title-widget>Categorias</span>
+  <div content-widget>
+    <div class="row" *ngFor="let category of categories">
+      <div class="col-12">
+        <p-checkbox
+          name="category"
+          [value]="category.id"
+          [(ngModel)]="selectedCategories"
+          (onChange)="sendCategories()"
+          [label]="category.name"
+        ></p-checkbox>
+      </div>
+    </div>
+  </div>
+  <span footer-widget>Categorias del Sitio</span>
+</app-widget>

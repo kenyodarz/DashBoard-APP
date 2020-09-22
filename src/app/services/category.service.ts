@@ -22,4 +22,10 @@ export class CategoryService {
   getCategories(): Observable<Category[]> {
     return this.afd.list<Category>('/categories').valueChanges();
   }
+
+  deleteCategories(ids: string[]) {
+    ids.forEach((id) => {
+      this.afd.object('/categories/' + id).remove();
+    });
+  }
 }

@@ -9,6 +9,7 @@ import { MessageModule } from 'primeng/message';
 import { ToastModule } from 'primeng/toast';
 import { TableModule } from 'primeng/table';
 import { CheckboxModule } from 'primeng/checkbox';
+import { EditorModule } from 'primeng/editor';
 
 
 const myModule = [
@@ -20,6 +21,7 @@ const myModule = [
   ToastModule,
   TableModule,
   CheckboxModule,
+  EditorModule,
 ];
 
 @NgModule({
