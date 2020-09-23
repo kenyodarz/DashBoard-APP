@@ -10,6 +10,7 @@ import { ToastModule } from 'primeng/toast';
 import { TableModule } from 'primeng/table';
 import { CheckboxModule } from 'primeng/checkbox';
 import { EditorModule } from 'primeng/editor';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 
 const myModule = [
@@ -22,6 +23,7 @@ const myModule = [
   TableModule,
   CheckboxModule,
   EditorModule,
+  ProgressSpinnerModule,
 ];
 
 @NgModule({

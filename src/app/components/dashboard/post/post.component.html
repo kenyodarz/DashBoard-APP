@@ -3,10 +3,7 @@
     <div class="row no-gutters">
       <div class="col-12 border-bottom pl-0 pb-2">
         <span class="title-section mr-4">Posts</span>
-        <button
-          class="btn btn-primary btn-sm"
-          [routerLink]="['/posts/add']"
-        >
+        <button class="btn btn-primary btn-sm" [routerLink]="['/posts/add']">
           Agregar Post
         </button>
       </div>
@@ -16,7 +13,7 @@
         <div class="row">
           <div class="col-12">
             <span>Buscar</span>
-          </div>  
+          </div>
         </div>
         <div class="row">
           <div class="col-12 input-group">
@@ -32,13 +29,15 @@
               <button
                 class="btn btn-primary rounded-0"
                 (click)="updateword(search.value)"
-              >Buscar</button>
+              >
+                Buscar
+              </button>
             </span>
           </div>
         </div>
       </div>
     </div>
-    <!-- <div class="row no-gutters mt-4">
+    <div class="row no-gutters mt-4">
       <div class="col-12">
         <p-table [columns]="cols" [value]="posts" [responsive]="true">
           <ng-template pTemplate="header" let-columns>
@@ -48,40 +47,67 @@
               </th>
             </tr>
           </ng-template>
-          <ng-template pTemplate="body" let-category>
+          <ng-template pTemplate="body" let-post>
             <tr>
               <td>
-                <span class="p-column-title">Categoria Seleccionada </span>
+                <span class="p-column-title">Post Seleccionado </span>
                 <p-checkbox
                   name="posts"
-                  [value]="category.id"
-                  [(ngModel)]="selectedposts"
+                  [value]="post.id"
+                  [(ngModel)]="selectedPosts"
                 ></p-checkbox>
               </td>
               <td>
-                <span class="p-column-title">Nombre Categoria </span>
+                <span class="p-column-title">Titulo Post </span>
                 <span highlight [search]="searchWord">
-                  {{ category.name }}
+                  {{ post.title }}
+                </span>
+              </td>
+              <!-- <td>
+                <span class="p-column-title">Conteniedo Post </span>
+                <span highlight [search]="searchWord">
+                  {{ post.content }}
+                </span>
+              </td> -->
+              <td>
+                <span class="p-column-title">Fecha Post </span>
+                <span>
+                  {{ post.date | date: "dd/MM/yyyy" }}
                 </span>
               </td>
               <td>
-                <span class="p-column-title">Descripcion Categoria </span>
-                <span highlight [search]="searchWord">
-                  {{ category.description }}
+                <span class="p-column-title">Categorias Post </span>
+                <ng-container
+                  *ngIf="!post.categories || post.categories.length === 0"
+                >
+                  <span>Sin Categorias</span>
+                </ng-container>
+                <span>
+                  {{ post.categories }}
                 </span>
+              </td>
+              <td>
+                <span class="p-column-title">Imagen Post </span>
+                <span *ngIf="post.img">
+                  <img
+                    src="{{ post.img }}"
+                    class="img-fluid"
+                    alt="{{ post.title }}"
+                  />
+                </span> 
               </td>
             </tr>
           </ng-template>
         </p-table>
       </div>
     </div>
-    <div class="row no-gutters mt-4" *ngIf="selectedposts.length >= 1">
+    <div class="row no-gutters mt-4" *ngIf="selectedPosts.length >= 1">
       <div class="col-12">
-        <button class="btn btn-primary" (click)="deleteposts()">
+        <button class="btn btn-primary" (click)="deletePosts()">
           Eliminar
-          {{ selectedposts.length >= 2 ? "Categorias" : "Categoria" }}
+          {{ selectedPosts.length >= 2 ? "Posts" : "Post" }}
         </button>
       </div>
-    </div> -->
+    </div>
   </div>
 </div>

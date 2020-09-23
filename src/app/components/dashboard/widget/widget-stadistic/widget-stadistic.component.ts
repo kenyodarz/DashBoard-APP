@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 //Services
 import { ConfigService } from 'src/app/services/config.service';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-widget-stadistic',
@@ -13,11 +14,13 @@ export class WidgetStadisticComponent implements OnInit {
   numComments: number;
   numPost: number;
 
-  constructor(public config: ConfigService) {}
+  constructor(public config: ConfigService, private post: PostService) {}
 
   ngOnInit(): void {
     this.numUsers = this.config.numUsers;
-    this.numPost = 20;
+    this.post.getPost().subscribe(listPost => {
+      this.numPost = listPost.length;
+    })
     this.numComments = 5;
   }
 }

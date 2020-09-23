@@ -49,6 +49,7 @@
               "angularfire2",
               "firebase/app",
               "@firebase/database",
+              "@firebase/component",
               "moment",
               "quill.js"
             ],

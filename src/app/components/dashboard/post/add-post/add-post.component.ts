@@ -34,13 +34,17 @@ export class AddPostComponent implements OnInit {
       summary: 'Correcto',
       detail: 'Post Publicado Correctamente',
     });
-    this.router.navigateByUrl('/categories');
+    this.router.navigateByUrl('/posts');
   }
 
   getCategories($event: string[]) {
     console.log($event);
     // console.log(typeof($event));
     this.post.categories = $event;
+  }
+  getPath($event) {
+    console.log($event);
+    this.post.img = $event;
   }
 
   ngOnInit(): void {}

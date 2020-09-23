@@ -58,6 +58,11 @@
                   <app-widget-category (select)="getCategories($event)"></app-widget-category>
                 </div>
               </div>
+              <div class="row">
+                <div class="col-12">
+                  <app-widget-upload-thumbnail (sendPath)="getPath($event)"></app-widget-upload-thumbnail>
+                </div>
+              </div>
             </div>
           </div>
         </form>

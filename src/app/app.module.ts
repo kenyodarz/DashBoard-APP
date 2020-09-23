@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from '@Angular/fire/database'
+import { AngularFireStorageModule } from "@angular/fire/storage";
 // Modules
 import { PrimengModule } from './primeng.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +30,9 @@ import { WidgetLastCommentsComponent } from './components/dashboard/widget/widge
 import { WidgetLastVisitsComponent } from './components/dashboard/widget/widget-last-visits/widget-last-visits.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { WidgetCategoryComponent } from './components/dashboard/widget/widget-category/widget-category.component';
+import { WidgetUploadThumbnailComponent } from './components/dashboard/widget/widget-upload-thumbnail/widget-upload-thumbnail.component';
+import { JoinPipe } from './pipes/join.pipe';
+import { LoginComponent } from './components/login/login.component';
 
 export function configFactory(provider: ConfigService) {
   return () => provider.getData();
@@ -61,6 +65,9 @@ const firebaseConfig = {
     HighlightDirective,
     AddPostComponent,
     WidgetCategoryComponent,
+    WidgetUploadThumbnailComponent,
+    JoinPipe,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,6 +79,7 @@ const firebaseConfig = {
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
+    AngularFireStorageModule,
   ],
   providers: [
     ConfigService,
