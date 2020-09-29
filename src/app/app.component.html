@@ -1,18 +1,18 @@
-<!-- <div class="container-fluid">
+<div class="container-fluid" *ngIf="auth.isAuthenticated()">
   <p-toast></p-toast>
   <div class="row">
     <div class="col-sm-2 col-12 p-0">
-      SideBar
+      <!-- SideBar -->
       <app-sidebar></app-sidebar>
     </div>
     <div class="col-sm-10 col-12">
-      DashBoard
+      <!-- DashBoard -->
       <app-dashboard></app-dashboard>
     </div>
   </div>
-</div> -->
+</div>
 
-<div class="container h-100">
+<div class="container h-100" *ngIf="!auth.isAuthenticated()">
   <div class="row">
     <div class="col-12">
       <app-login></app-login>
